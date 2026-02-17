@@ -1,0 +1,1346 @@
+/* =========================
+   Themes
+========================= */
+.themeLight {
+    --bg1: #e8efe9;
+    --bg2: #dfe9e1;
+    --card: #ffffff;
+    --green: #2f5b3f;
+    --green2: #4f7a61;
+    --muted: #8a9a90;
+    --shadow: 0 18px 60px rgba(0, 0, 0, 0.08);
+    --radius: 26px;
+    --text: #203027;
+    --panel: rgba(255, 255, 255, 0.70);
+}
+
+.themeDark {
+    --bg1: #0f1512;
+    --bg2: #0b120e;
+    --card: #121a15;
+    --green: #8fd0a8;
+    --green2: #b7e2c7;
+    --muted: #9fb2a8;
+    --shadow: 0 18px 60px rgba(0, 0, 0, 0.45);
+    --radius: 26px;
+    --text: #e8f2ec;
+    --panel: rgba(18, 26, 21, 0.75);
+}
+
+
+
+
+/* =========================
+   Global Theme
+========================= */
+:root {
+    --bg1: #e8efe9;
+    --bg2: #dfe9e1;
+    --card: #ffffff;
+    --green: #2f5b3f;
+    --green2: #4f7a61;
+    --muted: #8a9a90;
+    --shadow: 0 18px 60px rgba(0, 0, 0, 0.08);
+    --radius: 26px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Helvetica Neue", sans-serif;
+    background: radial-gradient(1200px 600px at 50% 10%, var(--bg2), var(--bg1));
+    color: var(--text);
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* nice default form styling (helps Quran/Dua/Names controls) */
+input,
+select,
+textarea {
+    font: inherit;
+    color: #24352b;
+}
+
+button {
+    font: inherit;
+}
+
+/* layout wrapper */
+.wrap {
+    width: min(1180px, 92vw);
+    margin: 0 auto;
+    padding: 22px 0 40px;
+}
+
+.card {
+    background: var(--card);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    border: 1px solid rgba(47, 91, 63, 0.12);
+}
+
+.hr {
+    height: 1px;
+    background: rgba(255, 255, 255, 0.16);
+    margin: 18px 0;
+}
+
+/* =========================
+   Navbar (pill style)
+========================= */
+.navWrap {
+    width: min(1180px, 92vw);
+    margin: 18px auto 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.navPills {
+    background: rgba(255, 255, 255, 0.65);
+    border: 1px solid rgba(47, 91, 63, 0.14);
+    border-radius: 999px;
+    padding: 10px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.06);
+}
+
+/* navLink is <button> => reset default button UI */
+.navLink {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+
+    padding: 12px 18px;
+    border-radius: 999px;
+
+    font: inherit;
+    font-weight: 900;
+    color: var(--green2);
+
+    transition: 0.12s;
+}
+
+.navLink:hover {
+    transform: translateY(-1px);
+    background: rgba(47, 91, 63, 0.10);
+}
+
+.navLinkActive {
+    background: rgba(47, 91, 63, 0.20);
+    color: var(--green);
+}
+
+.navLink:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(47, 91, 63, 0.22);
+}
+
+.langBtn {
+    border: none;
+    cursor: pointer;
+    border-radius: 999px;
+    padding: 12px 18px;
+    font-weight: 900;
+    background: var(--green);
+    color: #fff;
+    box-shadow: 0 14px 35px rgba(47, 91, 63, 0.18);
+    transition: 0.12s;
+}
+
+.langBtn:hover {
+    transform: translateY(-1px);
+}
+
+@media (max-width: 720px) {
+    .navWrap {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .langBtn {
+        width: 100%;
+    }
+}
+
+/* =========================
+   Page Container + Title
+========================= */
+.pageCard {
+    width: min(1180px, 92vw);
+    margin: 18px auto 0;
+    padding: 24px;
+    background: rgba(255, 255, 255, 0.70);
+    border-radius: 36px;
+    border: 1px solid rgba(47, 91, 63, 0.12);
+    box-shadow: var(--shadow);
+}
+
+.pageTitle {
+    text-align: center;
+    font-family: ui-serif, Georgia, "Times New Roman", serif;
+    font-size: 64px;
+    color: var(--green);
+    margin: 10px 0 18px;
+}
+
+@media (max-width: 900px) {
+    .pageTitle {
+        font-size: 46px;
+    }
+}
+
+/* =========================
+   Headings (Home)
+========================= */
+.centerHead {
+    text-align: center;
+    margin: 26px 0 22px;
+}
+
+.centerHead h1 {
+    font-family: ui-serif, Georgia, "Times New Roman", serif;
+    font-size: 62px;
+    letter-spacing: 1px;
+    color: var(--green);
+    margin: 0;
+}
+
+.centerHead p {
+    margin: 8px 0 0;
+    color: var(--green2);
+    letter-spacing: 3px;
+    font-weight: 900;
+}
+
+/* =========================
+   Home Layout
+========================= */
+.grid2 {
+    display: grid;
+    grid-template-columns: 1.25fr 1fr;
+    gap: 22px;
+}
+
+@media (max-width: 900px) {
+    .grid2 {
+        grid-template-columns: 1fr;
+    }
+
+    .centerHead h1 {
+        font-size: 44px;
+    }
+}
+
+.todayCard {
+    background: var(--green);
+    color: #fff;
+    padding: 26px 26px 22px;
+    border-radius: var(--radius);
+}
+
+.todayTitle {
+    text-align: center;
+    font-weight: 950;
+    letter-spacing: 1px;
+    margin-bottom: 18px;
+    opacity: 0.95;
+}
+
+.todayRow {
+    display: flex;
+    justify-content: space-between;
+    gap: 18px;
+    align-items: flex-end;
+}
+
+.smallLabel {
+    font-weight: 900;
+    opacity: 0.92;
+    letter-spacing: 1px;
+    font-size: 12px;
+}
+
+.bigTime {
+    font-weight: 950;
+    font-size: 54px;
+    letter-spacing: 2px;
+}
+
+.dayLine {
+    text-align: center;
+    opacity: 0.85;
+    font-weight: 800;
+    font-style: italic;
+}
+
+.miniHint {
+    margin-top: 14px;
+    text-align: center;
+    font-size: 12px;
+    opacity: 0.85;
+}
+
+/* =========================
+   Progress Card
+========================= */
+.progressBox {
+    padding: 26px;
+    min-height: 190px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 12px;
+}
+
+.progressTitle {
+    text-align: center;
+    font-weight: 950;
+    letter-spacing: 2px;
+    color: var(--text);
+    font-size: 20px;
+}
+
+.progressBar {
+    width: 100%;
+    height: 18px;
+    border-radius: 999px;
+    background: rgba(47, 91, 63, 0.10);
+    border: 1px solid rgba(47, 91, 63, 0.14);
+    overflow: hidden;
+}
+
+.progressFill {
+    height: 100%;
+    width: 0%;
+    background: rgba(47, 91, 63, 0.55);
+    transition: width 0.25s ease;
+}
+
+.progressMeta {
+    text-align: center;
+    color: var(--green2);
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+.progressFill {
+    transition: width 0.8s ease;
+}
+
+/* Completion badge */
+.completeBadge {
+    margin-top: 12px;
+    text-align: center;
+    font-weight: 950;
+    letter-spacing: 0.6px;
+    padding: 10px 14px;
+    border-radius: 999px;
+    background: rgba(47, 91, 63, 0.16);
+    border: 1px solid rgba(47, 91, 63, 0.22);
+    color: var(--green);
+}
+
+/* =========================
+   Tables (Times / Salah)
+========================= */
+.tableWrap {
+    overflow: auto;
+    border-radius: 20px;
+    border: 1px solid rgba(47, 91, 63, 0.12);
+    background: #fff;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 720px;
+    background: #fff;
+}
+
+.table th {
+    text-align: left;
+    padding: 16px 16px;
+    background: rgba(79, 122, 97, 0.70);
+    color: #fff;
+    font-weight: 950;
+    letter-spacing: 1px;
+}
+
+.table td {
+    padding: 16px 16px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+    color: #24352b;
+    font-weight: 700;
+}
+
+.table td strong {
+    color: var(--green);
+}
+
+/* =========================
+   Quran grid + checkbox card style
+========================= */
+.gridCards {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 14px;
+}
+
+@media (max-width: 1100px) {
+    .gridCards {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 680px) {
+    .gridCards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.itemCard {
+    padding: 14px;
+    border-radius: 18px;
+    border: 1px solid rgba(47, 91, 63, 0.12);
+    background: rgba(255, 255, 255, 0.85);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+}
+
+.checkRow {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.checkBox {
+    width: 22px;
+    height: 22px;
+    border-radius: 7px;
+    border: 2px solid rgba(79, 122, 97, 0.60);
+    display: inline-grid;
+    place-items: center;
+}
+
+.checkBox.checked {
+    background: rgba(47, 91, 63, 0.18);
+    border-color: rgba(47, 91, 63, 0.55);
+}
+
+.checkLabel {
+    font-weight: 900;
+    color: #203027;
+    letter-spacing: 0.6px;
+    font-size: 12px;
+}
+
+/* If Quran page is currently a raw list, this makes it still look decent */
+.quranList {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.quranList li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 14px;
+    border-radius: 16px;
+    border: 1px solid rgba(47, 91, 63, 0.10);
+    background: rgba(255, 255, 255, 0.80);
+    margin-bottom: 10px;
+    font-weight: 900;
+}
+
+/* =========================
+   Dua page cards + button
+========================= */
+.duaList {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.duaCard {
+    padding: 18px 18px 16px;
+    border-radius: 22px;
+    border: 1px solid rgba(47, 91, 63, 0.12);
+    background: rgba(255, 255, 255, 0.88);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+}
+
+.duaTop {
+    font-weight: 950;
+    letter-spacing: 1px;
+    color: #2d4a37;
+    margin-bottom: 8px;
+}
+
+.duaArabic {
+    font-family: ui-serif, "Amiri", "Scheherazade New", serif;
+    font-size: 28px;
+    line-height: 1.8;
+    color: #1f2f26;
+}
+
+.duaTrans {
+    margin-top: 6px;
+    color: #4a5e53;
+    font-weight: 800;
+}
+
+.duaMean {
+    margin-top: 10px;
+    color: #24352b;
+    font-weight: 800;
+}
+
+.btnPrimary {
+    border: none;
+    cursor: pointer;
+    border-radius: 999px;
+    padding: 12px 18px;
+    font-weight: 950;
+    background: var(--green);
+    color: #fff;
+    box-shadow: 0 14px 30px rgba(47, 91, 63, 0.16);
+    transition: 0.12s;
+}
+
+.btnPrimary:hover {
+    transform: translateY(-1px);
+}
+
+.btnSoft {
+    border: none;
+    cursor: pointer;
+    border-radius: 14px;
+    padding: 12px 14px;
+    font-weight: 950;
+    color: var(--green);
+    background: rgba(122, 162, 134, 0.16);
+    transition: 0.12s;
+}
+
+.btnSoft:hover {
+    transform: translateY(-1px);
+}
+
+/* =========================
+   Notice Card (Before/After Ramadan)
+========================= */
+.noticeCard {
+    padding: 18px 20px;
+    margin: 10px 0 18px;
+    border: 1px solid rgba(47, 91, 63, 0.12);
+    background: rgba(255, 255, 255, 0.78);
+    border-radius: 26px;
+    box-shadow: var(--shadow);
+}
+
+.noticeTitle {
+    font-weight: 950;
+    color: var(--green);
+    letter-spacing: 1px;
+    text-align: center;
+    margin-bottom: 6px;
+}
+
+.noticeText {
+    text-align: center;
+    color: #355243;
+    font-weight: 800;
+}
+
+.noticeTimer {
+    margin-top: 10px;
+    text-align: center;
+    font-weight: 950;
+    font-size: 22px;
+    color: var(--green2);
+    letter-spacing: 1px;
+}
+
+/* =========================
+   Home KPI Row
+========================= */
+.homeKpiRow {
+    margin-top: 22px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 22px;
+}
+
+@media (max-width: 900px) {
+    .homeKpiRow {
+        grid-template-columns: 1fr;
+    }
+}
+
+.kpiCard {
+    padding: 22px;
+}
+
+.kpiTitle {
+    text-align: center;
+    font-weight: 950;
+    letter-spacing: 2px;
+    color: #2d4a37;
+    margin-bottom: 10px;
+}
+
+.kpiValue {
+    text-align: center;
+    font-size: 40px;
+    font-weight: 950;
+    letter-spacing: 1px;
+    color: var(--green);
+}
+
+.kpiStack {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 8px;
+}
+
+.kpiLine {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 14px;
+    border-radius: 14px;
+    border: 1px solid rgba(122, 162, 134, 0.22);
+    background: #fbfdfb;
+}
+
+.kpiLabel {
+    font-weight: 950;
+    color: var(--green2);
+}
+
+.kpiCount {
+    font-weight: 950;
+    color: #2c3b31;
+    letter-spacing: 0.6px;
+}
+
+.kpiHint {
+    margin-top: 12px;
+    text-align: center;
+    color: var(--muted);
+    font-weight: 800;
+    font-size: 12px;
+}
+
+/* =========================
+   99 Names: grid + search/sort + modal + toast
+========================= */
+.controlsRow {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 6px 0 14px;
+}
+
+.searchBox {
+    flex: 1.3;
+    min-width: 260px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 14px;
+    border-radius: 14px;
+    border: 1px solid rgba(122, 162, 134, 0.25);
+    background: #fbfdfb;
+}
+
+.searchIcon {
+    font-weight: 950;
+    color: var(--green2);
+}
+
+.searchBox input {
+    width: 100%;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-weight: 800;
+    color: #2c3b31;
+}
+
+.selectBox {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 12px;
+    border-radius: 14px;
+    border: 1px solid rgba(122, 162, 134, 0.25);
+    background: #fbfdfb;
+}
+
+.selectBox label {
+    font-weight: 950;
+    color: var(--green2);
+    font-size: 12px;
+    letter-spacing: 0.8px;
+}
+
+.selectBox select {
+    border: none;
+    outline: none;
+    background: transparent;
+    font-weight: 900;
+    color: #2c3b31;
+    cursor: pointer;
+}
+
+.resultInfo {
+    margin: 2px 0 16px;
+    color: var(--muted);
+    font-weight: 800;
+}
+
+.namesGrid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 14px;
+}
+
+@media (max-width: 1100px) {
+    .namesGrid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 680px) {
+    .namesGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.nameCard {
+    padding: 18px;
+    border-radius: 18px;
+    border: 1px solid rgba(47, 91, 63, 0.12);
+    background: rgba(255, 255, 255, 0.88);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+}
+
+.nameCardClickable {
+    cursor: pointer;
+    transition: 0.15s;
+}
+
+.nameCardClickable:hover {
+    transform: translateY(-2px);
+}
+
+.nameEn {
+    font-weight: 950;
+    color: var(--green2);
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.nameAr {
+    margin-top: 8px;
+    font-family: ui-serif, "Amiri", "Scheherazade New", serif;
+    font-size: 30px;
+    text-align: center;
+    color: #1f2f26;
+}
+
+.nameMean {
+    margin-top: 8px;
+    text-align: center;
+    color: var(--muted);
+    font-weight: 800;
+    font-size: 12px;
+}
+
+/* Modal */
+.modalOverlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(10, 18, 13, 0.38);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 18px;
+    z-index: 9999;
+}
+
+.modalCard {
+    width: min(680px, 96vw);
+    background: #fff;
+    border-radius: 22px;
+    border: 1px solid rgba(122, 162, 134, 0.22);
+    box-shadow: 0 24px 70px rgba(0, 0, 0, 0.22);
+    padding: 18px 18px 16px;
+}
+
+.modalTop {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.modalTitle {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 950;
+    color: #2d4a37;
+}
+
+.badge {
+    display: inline-grid;
+    place-items: center;
+    min-width: 34px;
+    height: 34px;
+    padding: 0 10px;
+    border-radius: 999px;
+    background: rgba(122, 162, 134, 0.18);
+    color: var(--green);
+    font-weight: 950;
+}
+
+.modalClose {
+    border: none;
+    background: rgba(122, 162, 134, 0.16);
+    color: var(--green);
+    font-weight: 950;
+    border-radius: 12px;
+    padding: 10px 12px;
+    cursor: pointer;
+}
+
+.modalArabic {
+    margin-top: 14px;
+    font-size: 44px;
+    text-align: center;
+    line-height: 1.5;
+    font-family: ui-serif, "Amiri", "Scheherazade New", serif;
+    color: #1f2f26;
+}
+
+.modalMeaning {
+    margin-top: 10px;
+    text-align: center;
+    color: #6a7b70;
+    font-weight: 900;
+}
+
+.modalBtns {
+    margin-top: 16px;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.modalHint {
+    margin: 14px 0 0;
+    text-align: center;
+    font-weight: 800;
+    color: #93a397;
+    font-size: 12px;
+}
+
+/* Toast */
+.toast {
+    position: fixed;
+    bottom: 18px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #1f2f26;
+    color: #fff;
+    padding: 10px 14px;
+    border-radius: 999px;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.25);
+    font-weight: 900;
+    z-index: 10000;
+}
+
+/* =========================
+   Quran Page (chipsGrid)
+========================= */
+.chipsGrid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 14px;
+}
+
+@media (max-width: 1100px) {
+    .chipsGrid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 680px) {
+    .chipsGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.chip {
+    padding: 14px;
+    border-radius: 18px;
+    border: 1px solid rgba(47, 91, 63, 0.12);
+    background: rgba(255, 255, 255, 0.88);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+    cursor: pointer;
+    transition: 0.15s;
+}
+
+.chip:hover {
+    transform: translateY(-2px);
+}
+
+.chip .left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.check {
+    width: 22px;
+    height: 22px;
+    border-radius: 7px;
+    border: 2px solid rgba(79, 122, 97, 0.60);
+    display: grid;
+    place-items: center;
+    font-weight: 950;
+    color: #2f5b3f;
+}
+
+.check.on {
+    background: rgba(47, 91, 63, 0.18);
+    border-color: rgba(47, 91, 63, 0.55);
+}
+
+/* =========================
+   Dua Page (duaGrid)
+========================= */
+.duaGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+@media (max-width: 1100px) {
+    .duaGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 720px) {
+    .duaGrid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.duaCard {
+    padding: 18px 18px 16px;
+    border-radius: 22px;
+    border: 1px solid rgba(47, 91, 63, 0.12);
+    background: rgba(255, 255, 255, 0.88);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+}
+
+.duaTag {
+    font-weight: 950;
+    letter-spacing: 1px;
+    color: var(--green2);
+    font-size: 12px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.duaCard .ar {
+    font-family: ui-serif, "Amiri", "Scheherazade New", serif;
+    font-size: 28px;
+    line-height: 1.8;
+    color: #1f2f26;
+}
+
+.duaCard .tr {
+    margin-top: 6px;
+    color: #4a5e53;
+    font-weight: 800;
+}
+
+.duaCard .mean {
+    margin-top: 10px;
+    color: #24352b;
+    font-weight: 800;
+    margin-bottom: 0;
+}
+
+
+.btnPrimary {
+    border: none;
+    cursor: pointer;
+    border-radius: 999px;
+    padding: 12px 18px;
+    font-weight: 950;
+    background: var(--green);
+    color: #fff;
+    box-shadow: 0 14px 30px rgba(47, 91, 63, 0.16);
+    transition: 0.12s;
+}
+
+
+.navRight {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.themeBtn {
+    border: none;
+    cursor: pointer;
+    border-radius: 999px;
+    padding: 12px 18px;
+    font-weight: 900;
+    background: rgba(255, 255, 255, 0.20);
+    color: var(--text);
+    border: 1px solid rgba(143, 208, 168, 0.20);
+    transition: 0.12s;
+}
+
+.themeBtn:hover {
+    transform: translateY(-1px);
+}
+
+/* Make page cards adapt to dark */
+.pageCard {
+    background: var(--panel);
+}
+
+
+/* =========================
+   Theme Overrides (Fix odd look)
+   Put at END of file
+========================= */
+
+/* Make common surfaces follow theme */
+.themeLight .card,
+.themeDark .card {
+    background: var(--card);
+    color: var(--text);
+}
+
+/* Page wrapper panels */
+.themeLight .pageCard,
+.themeDark .pageCard {
+    background: var(--panel);
+    color: var(--text);
+}
+
+/* Make headings follow theme (you had hardcoded colors) */
+.themeLight .pageTitle,
+.themeDark .pageTitle,
+.themeLight .centerHead h1,
+.themeDark .centerHead h1 {
+    color: var(--green);
+}
+
+.themeLight .centerHead p,
+.themeDark .centerHead p {
+    color: var(--green2);
+}
+
+/* Progress/labels text - remove hardcoded black */
+.themeLight .progressTitle,
+.themeDark .progressTitle {
+    color: var(--text);
+}
+
+/* Make table readable in dark mode */
+.themeDark .tableWrap {
+    background: var(--card);
+}
+
+.themeDark .table {
+    background: var(--card);
+}
+
+.themeDark .table td {
+    color: var(--text);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.themeDark .table th {
+    background: rgba(143, 208, 168, 0.22);
+    color: var(--text);
+}
+
+/* Chips / Dua / Names cards (you used light hardcoded backgrounds) */
+.themeDark .chip,
+.themeDark .duaCard,
+.themeDark .nameCard,
+.themeDark .itemCard {
+    background: var(--card);
+    color: var(--text);
+    border-color: rgba(143, 208, 168, 0.18);
+}
+
+/* Fix tiny text colors */
+.themeDark .nameMean,
+.themeDark .modalMeaning,
+.themeDark .duaCard .tr {
+    color: var(--muted);
+}
+
+.themeDark .duaCard .mean {
+    color: var(--text);
+}
+
+/* =========================
+   Navbar right side + Dark button visibility
+========================= */
+.navRight {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+/* Make theme button always visible */
+.themeBtn {
+    border: 1px solid rgba(143, 208, 168, 0.28);
+    cursor: pointer;
+    border-radius: 999px;
+    padding: 12px 18px;
+    font-weight: 900;
+    transition: 0.12s;
+}
+
+/* Light mode: dark button looks strong */
+.themeLight .themeBtn {
+    background: #1f2f26;
+    color: #ffffff;
+}
+
+/* Dark mode: light button looks strong */
+.themeDark .themeBtn {
+    background: #e8f2ec;
+    color: #35544450;
+}
+
+.themeBtn:hover {
+    transform: translateY(-1px);
+}
+
+/* Optional: make nav pills look nicer in dark */
+.themeDark .navPills {
+    background: rgba(32, 108, 61, 0.671);
+    border-color: rgba(143, 208, 168, 0.16);
+}
+
+.themeDark .navLink {
+    color: rgba(232, 242, 236, 0.85);
+}
+
+.themeDark .navLinkActive {
+    background: rgba(143, 208, 168, 0.18);
+    color: #e8f2ec;
+}
+
+
+/* =========================
+   Countdown Rings
+========================= */
+.ringGrid {
+    margin-top: 12px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+}
+
+@media (max-width: 720px) {
+    .ringGrid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.ringCard {
+    border-radius: 18px;
+    border: 1px solid rgba(122, 162, 134, 0.22);
+    background: rgba(255, 255, 255, 0.70);
+    padding: 14px;
+}
+
+.themeDark .ringCard {
+    background: rgba(18, 26, 21, 0.65);
+    border-color: rgba(143, 208, 168, 0.18);
+}
+
+.ringTitle {
+    text-align: center;
+    font-weight: 950;
+    letter-spacing: 1px;
+    color: var(--green2);
+    margin-bottom: 8px;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+.ringWrap {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    margin: 0 auto;
+}
+
+.ringSvg {
+    width: 120px;
+    height: 120px;
+    display: block;
+    transform: rotate(-90deg);
+    /* start top */
+}
+
+.ringBg {
+    fill: none;
+    stroke: rgba(47, 91, 63, 0.12);
+    stroke-width: 10;
+}
+
+.themeDark .ringBg {
+    stroke: rgba(232, 242, 236, 0.12);
+}
+
+.ringFg {
+    fill: none;
+    stroke: var(--green);
+    stroke-width: 10;
+    stroke-linecap: round;
+    transition: stroke-dasharray 0.6s ease;
+}
+
+.ringText {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.ringTime {
+    font-weight: 950;
+    font-size: 16px;
+    color: var(--text);
+    letter-spacing: 0.6px;
+}
+
+.ringPct {
+    margin-top: 4px;
+    font-weight: 900;
+    font-size: 12px;
+    color: var(--muted);
+}
+
+/* Ring urgency colors */
+.ringOk .ringFg {
+    stroke: #2f5b3f;
+    /* green */
+}
+
+.ringWarn .ringFg {
+    stroke: #c9a227;
+    /* yellow/gold */
+}
+
+.ringDanger .ringFg {
+    stroke: #d14b4b;
+    /* red */
+}
+
+/* Still keep animation smooth */
+.ringFg {
+    transition: stroke-dasharray 0.6s ease, stroke 0.35s ease;
+}
+
+
+
+/* =========================
+   Niyot: Search + Cards
+========================= */
+.niyotGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+}
+
+@media (max-width: 900px) {
+    .niyotGrid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.niyotCard {
+    padding: 18px;
+    border-radius: 18px;
+    border: 1px solid rgba(47, 91, 63, 0.12);
+    background: #fff;
+}
+
+.niyotLabel {
+    font-weight: 950;
+    letter-spacing: 1px;
+    color: var(--green);
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.niyotAr {
+    font-family: ui-serif, "Amiri", "Scheherazade New", serif;
+    font-size: 32px;
+    text-align: center;
+    color: #1f2f26;
+    line-height: 1.6;
+}
+
+.niyotBn,
+.niyotEn {
+    margin-top: 12px;
+    text-align: center;
+    font-weight: 800;
+    color: #355243;
+}
+
+.niyotEmpty {
+    margin-top: 18px;
+    text-align: center;
+    font-weight: 900;
+    color: var(--muted);
+}
+
+
+.btnPrimary:hover {
+    transform: translateY(-1px);
+}
